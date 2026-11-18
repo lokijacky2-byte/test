@@ -1,0 +1,26 @@
+{
+  "name": "backend-hapi-app",
+  "version": "1.0.0",
+  "description": "Backend application built with Hapi.js",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "hapi",
+    "backend",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "@hapi/boom": "^10.0.1",
+    "@hapi/joi": "^17.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
