@@ -1,6 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const config = require('./config');
 const plugins = require('./plugins');
+const routes = require('./routes');
 
 let server;
 
@@ -18,31 +19,7 @@ const init = async () => {
     console.log('Plugins registered successfully');
 
     console.log('Registering routes...');
-    
-    server.route({
-      method: 'GET',
-      path: '/',
-      handler: (request, h) => {
-        return {
-          status: 'success',
-          message: 'Hapi.js server is running',
-          timestamp: new Date().toISOString()
-        };
-      }
-    });
-
-    server.route({
-      method: 'GET',
-      path: '/health',
-      handler: (request, h) => {
-        return {
-          status: 'healthy',
-          uptime: process.uptime(),
-          timestamp: new Date().toISOString()
-        };
-      }
-    });
-
+    server.route(routes);
     console.log('Routes registered successfully');
 
     await server.start();
